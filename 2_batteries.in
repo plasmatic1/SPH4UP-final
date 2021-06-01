@@ -1,0 +1,8 @@
+junction j1
+junction j2
+junction j3
+junction j4
+battery b1 9 j4 j1
+battery b2 9 j2 j3
+resistor r1 20 j1 j2
+resistor r2 30 j3 j4
