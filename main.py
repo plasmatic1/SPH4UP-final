@@ -39,7 +39,7 @@ with open(sys.argv[1]) as f:
         mp.add(obj_id)
 
         if cmd_type == 'battery':
-            obj_id, emf, p, n = args
+            obj_id, emf, n, p = args
             ensure(is_junction(p) and is_junction(n), f'Positive end {p} and negative end {n} must be junctions')
             objs[obj_id] = Battery(obj_id, float(emf), p, n)
             batteries.append(objs[obj_id])
