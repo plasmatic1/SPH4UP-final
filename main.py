@@ -102,10 +102,10 @@ def dfs(c, p):
                     if type(obj) == Resistor:  # Add resistor to equation
                         eqn += obj.resistance * sym_mp[obj.id][1]  # Ohm's law (V=IR)
                     elif type(obj) == Battery:
-                        if par[c] == obj.p:  # Edges going in increasing order of depth, battery is oriented "backwards"
-                            emf -= obj.emf
-                        else:
+                        if par[cur] == obj.n:  # Tree edges oriented in increasing depth, current is "forwards"
                             emf += obj.emf
+                        else:
+                            emf -= obj.emf
 
                     cur = par[cur]
 
